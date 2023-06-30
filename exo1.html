@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercice DOM</title>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+        .bouton {
+            padding: 10px;
+            border-radius: 15px;
+            border: solid 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1 class="title">Titre de la page</h1>
+        <p class="content">Contenu de la page</p>
+        <button id="btn">Cliquez ici</button>
+    </div>
+    <script>
+    // Votre code JS sera écrit ici
+        var t = document.querySelector(".title");
+            t.classList.add("red");
+            var pElement = document.querySelector("p.content");
+            pElement.classList.remove("content");
+            pElement.classList.add("blue");
+            var buttonElement = document.querySelector("#btn");
+            buttonElement.classList.add("bouton");
+    </script>
+</body>
+
+</html>
+
+<!-- 
+    Sélectionner l'élément <h1> avec la classe "title" et ajoutez lui la classe red.
+    Sélectionner l'élément <p> avec la classe "content" et remplacez la classe content par la classe blue.
+    Sélectionner l'élément <button> avec l'ID "btn" donnez lui une classe bouton
+-->
