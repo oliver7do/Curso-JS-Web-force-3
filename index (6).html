@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="monElement">Contenu initial</div>
+    <!-- apres l'execution de la ligne 18 la div sera remplace par 
+    <div id="monElement">Nouveau contenu</div>-->
+    <script>
+        // Sélection de l'élément par son identifiant
+        var element = document.getElementById("monElement");
+        // Accéder à la valeur du nœud texte de l'élément
+        var valeurInitiale = element.firstChild.nodeValue;
+        console.log(valeurInitiale); // Affiche "Contenu initial"
+        // Modifier la valeur du nœud texte de l'élément
+        element.firstChild.nodeValue = "Nouveau contenu";
+    </script>
+   
+</body>
+</html>

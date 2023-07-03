@@ -1,0 +1,43 @@
+form {
+    /* Apenas para centralizar o form na página */
+    margin: 0 auto;
+    width: 400px;
+    /* Para ver as bordas do formulário */
+    padding: 1em;
+    border: 1px solid #CCC;
+   
+    background-color: gray;
+    color: white;
+}
+.nom{
+    height: 30px;
+    border-radius: 3px;
+    width: 300px;
+}
+
+/* .button {
+    margin-left: 265px;
+    border: 2px solid white;
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+    margin-top: 5px;
+} */
+.liste{
+    margin: 0 auto;
+        width: 600px;
+        background-color: gray;
+        height: 600px;
+}
+.cor{
+    color: white;
+    margin: auto;
+    margin-left: 200px;
+
+}
+#msg {
+    height: 500px ;
+    width: 500px;
+    margin-top: 10px;
+    margin-left: 40px;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="monElement">Contenu initial</div>
+    <!-- apres execution de element.innerHTML = "<p>Nouveau contenu</p>" la div sera remplace par le contenu suivant -->
+    <!-- <div id="monElement">
+        <p>Nouveau contenu</p>
+    </div> -->
+    <script>
+        // Sélection de l'élément par son identifiant
+        var element = document.getElementById("monElement");
+        // Obtenir le contenu HTML de l'élément
+        var contenu = element.innerHTML;
+        console.log(contenu); // Affiche "Contenu initial"
+        // Définir un nouveau contenu HTML pour l'élément
+        element.innerHTML = "<p>Nouveau contenu</p>";
+    </script>
+</body>
+</html>

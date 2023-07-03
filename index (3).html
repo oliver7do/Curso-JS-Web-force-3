@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="fonc.js" defer></script> -->
+    <title>Document</title>
+    <style>
+        h1{
+            color: blueviolet;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="salut">Bonjour!</h1>
+    <div id="autre" class="maclasse btn primary"></div>
+    <div id="madiv" class="maclasse btn primary"></div>
+    <script>
+        // selectionner l'element
+        let elmt = document.getElementById("madiv");
+        // supprimer btn
+        elmt.classList.remove(elmt.classList[1]);
+        console.log(elmt.classList);
+
+        console.log(elmt.id);
+        // modification de l'attribut id
+        elmt.id = "newDiv";
+        console.log(elmt.id);
+
+        // selectionner l'element qui a l'id "salut"
+        let salut = document.getElementById("salut");
+        salut.style.color = "red"; // modifier sa couleur
+        // ajouter dans une fonction
+       setTimeout(function (){
+        let salut = document.getElementById("salut");
+        salut.style.color = "red";
+       }, 3000);
+
+    //    setTimeout(changeCouleur, 3000);
+    //    function changeCouleur(){
+    //     let salut = document.getElementById("salut");
+    //     salut.style.color = "red";
+    //    }
+    </script>
+</body>
+</html>

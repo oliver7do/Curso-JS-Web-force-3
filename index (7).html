@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="madiv"></div>
+    <script>
+        // Sélection de l'élément parent par son identifiant
+        var container = document.getElementById("madiv");
+
+        // Création d'un nouvel élément <p>
+        var paragraphe = document.createElement("p");
+
+        // on ajoute du text a notre paragraphe
+        paragraphe.textContent = "le texte qu'on a envie de mettre";
+        // la methode innerHTML ecrase le contenu initial de la balise selectionnee
+        // ajouter le paragraphe dans la div
+        container.appendChild(paragraphe);
+    </script>
+   
+</body>
+</html>

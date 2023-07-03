@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form>
+        <input id="pseudo" type="text">
+    </form>
+    <script>
+       
+        var valeur = document.getElementById("pseudo").value; // récupère la valeur du champ input
+        console.log(valeur); // affiche une chaîne de caractère vide
+        document.getElementById("pseudo").value = "Toto"; // modifier la valeur du champ
+        var nouvelleValeur = document.getElementById("pseudo").value; // récupère la nouvelle valeur
+        console.log(nouvelleValeur); // affiche Toto
+    </script>
+   
+</body>
+</html>
