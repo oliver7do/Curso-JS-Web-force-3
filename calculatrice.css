@@ -1,0 +1,28 @@
+.nomb {
+    width: 1000px;
+    margin: auto;
+    /* margin-top: 20px; */
+    background-color: aquamarine;
+    height: 200px;
+}
+#nombre{
+    display: flex;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+.nombre1{
+    margin-right: 25px;
+        margin-top: 60px;
+    border-radius: 4px;
+}
+#calcu{
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-top: 40px;
+}
+.noegre {
+    margin-right: 25px;
+    margin-top: 60px;
+    border-radius: 4px;
+}

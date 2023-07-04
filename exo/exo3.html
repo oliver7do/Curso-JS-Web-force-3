@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemple d'exercice simple sur jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="exo3.js" defer></script>
+</head>
+<body>
+  <h2>Formulaire de connexion</h2>
+  <form id="loginForm">
+    <label for="username">Nom d'utilisateur:</label>
+    <input type="text" id="username" name="username">
+
+    <label for="password">Mot de passe:</label>
+    <input type="password" id="password" name="password">
+
+    <input type="submit" value="Se connecter">
+  </form>
+  <!-- <p id="errorMessage"></p> -->
+  <input type="text" id="myInput">
+  <div id="errorMessage"></div>
+
+  <div class="mensagem" id="mensagem3">Vous n'avez rien écrit.</div>
+
+  <script>
+    // Exemplo de código para exibir mensagem de erro
+    $('#myInput').on('input', function () {
+      var inputValue = $(this).val();
+
+      if (inputValue.length === 0) {
+        $('#errorMessage').text('O campo não pode estar vazio.');
+      } else {
+        $('#errorMessage').text('');
+      }
+    });
+  </script>
+</body>
+</html>

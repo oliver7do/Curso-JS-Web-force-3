@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercice simple sur jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="exo2.js" defer></script>
+  <style>
+    .mensagem {
+      display: none;
+    }
+    body{
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <!-- <select id="dropdown">
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+  <p id="message"></p> -->
+  <select id="options">
+    <option value="opcao1">Option 1</option>
+    <option value="opcao2">Option 2</option>
+    <option value="opcao3">Option 3</option>
+  </select>
+  
+  <div class="mensagem" id="mensagem1">Vous avez sélectionné l'option 1.</div>
+  <div class="mensagem" id="mensagem2">Vous avez sélectionné l'option 2</div>
+  <div class="mensagem" id="mensagem3">Vous avez sélectionné l'option 3</div>
+
+    <script>
+      // $(document).ready(function () {
+      //   $('#options').change(function () {
+      //     var selectedOption = $(this).val();
+
+      //     switch (selectedOption) {
+      //       case 'opcao1':
+      //         $('#mensage').text('Você selecionou a opção 1.');
+      //         break;
+      //       case 'opcao2':
+      //         $('#mensage').text('Você selecionou a opção 2.');
+      //         break;
+      //       case 'opcao3':
+      //         $('#mensage').text('Você selecionou a opção 3.');
+      //         break;
+      //       default:
+      //         $('#mensage').text('');
+      //     }
+      //   });
+      // });
+      $(document).ready(function () {
+          $('#options').change(function () {
+            var selectedOption = $(this).val();
+
+            $('.mensagem').hide();
+            $('#mensagem' + selectedOption.slice(-1)).show();
+          });
+        });
+    </script>
+</body>
+</html>
+<!-- 
+    L'objectif de cet exercice est d'ecrire le code jquery pour afficher un message différent en fonction de l'option sélectionnée.
+-->

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input id="nom">
+    </form>
+    <script>
+        // récupère la valeur du input
+        let elements = $("#nom").val(); // jQuery
+        $("#nom").val("nouvelle valeur"); // modifier la valeur via le parametre de la fonction val
+        let valeur = document.getElementById("nom").value; // javascript pure
+        document.getElementById("nom").value = "nouvelle valeur"; // modifier la valeur
+        console.log(elements); // affiche une chaîne de caractère vide
+    </script>
+</body>
+</html>

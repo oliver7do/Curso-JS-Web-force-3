@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- avant -->
+    <p id="paragraphe">Lorem ipsum...</p>
+    <!-- apres -->
+    <!-- <p id="paragraphe"><strong>Nouveau contenu</strong></p> -->
+    <script>
+        // créer une balise strong avec le texte "Nouveau texte" qu'il injecte dans le paragraphe
+        $('#paragraphe').html('<strong>Nouveau contenu</strong>');
+        let contenu = $("#paragraphe").html();
+        console.log(contenu); // affiche "<strong>Nouveau contenu</strong>"
+
+        // pour avoir le meme resultat en javascript
+        // let strong = document.createElement("strong"); // creer une strong
+        // strong.textContent = "Nouveau contenu"; // lui ajouter du contenu
+        // document.getElementById("paragraphe").innerHTML = ""; // mise a zero du paragraphe
+        // document.getElementById("paragraphe").appendChild(strong); // ajout de strong et son contenu comme enfant du paragraphe (= lui ajoute un emplacement)
+        // let contenu1 = document.getElementById("paragraphe");
+        // console.log(contenu1); // affiche "<strong>Nouveau contenu</strong>"
+       
+    </script>
+</body>
+</html>
