@@ -1,0 +1,59 @@
+/* .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+}
+
+.rain {
+    width: 1000px;
+    height: 500px;
+    background: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+    position: relative;
+    overflow: hidden;
+}
+
+.rain::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 130px;
+    background-color: white;
+    animation: rainDrop 2s infinite;
+}
+
+@keyframes rainDrop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+} */
+
+@keyframes heartbeat {
+    0% {
+        background-color: red;
+        transform: scale(1);
+    }
+
+    50% {
+        background-color: blue;
+        transform: scale(1.2);
+    }
+
+    100% {
+        background-color: red;
+        transform: scale(1);
+    }
+}
+
+.heartbeat {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: 50%;
+    animation: heartbeat 1s ease-in-out infinite;
+}

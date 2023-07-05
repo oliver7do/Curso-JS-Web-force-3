@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="oli.css">
+</head>
+
+<body>
+<div class="todo">
+    <div class="myst">
+        <h1>Trouvez le nombre mystère</h1>
+        <p>Vous avez 7 essais maximum pour trouver le nombre</p>
+    </div>
+    <h1>Jeu de devinettes</h1>
+
+    <table>
+        <tr>
+            <th colspan="2">Jeu</th>
+        </tr>
+        <tr>
+            <td>Proposition :</td>
+            <td><input type="number" id="guessInput"></td>
+        </tr>
+        <tr>
+            <td>N°essai :</td>
+            <td><span id="attempts">0</span></td>
+        </tr>
+        <tr>
+            <td>Message :</td>
+            <td><span id="message"></span></td>
+        </tr>
+        <tr>
+            <td>Réponses :</td>
+            <td><span id="result"></span></td>
+        </tr>
+    </table>
+
+    <button id="playAgainBtn">Nouveau jeu</button>
+    <button id="showSolutionBtn">Solution</button>
+    <button id="giveHintBtn">Proposer</button>
+</div>
+    <script>
+        var randomNumber = Math.floor(Math.random() * 50) + 1;
+        var attempts = 0;
+
+        function checkGuess() {
+            var guess = parseInt(document.getElementById('guessInput').value);
+
+            if (isNaN(guess) || guess < 0 || guess > 50) {
+                document.getElementById('message').textContent = 'Entrez un nombre valide entre 1 et 50.';
+                return;
+            }
+
+            attempts++;
+
+            if (guess === randomNumber) {
+                document.getElementById('message').textContent = 'Félicitations ! Vous avez deviné le chiffre.';
+                document.getElementById('result').textContent = 'Réponse : positive';
+                document.getElementById('playAgainBtn').disabled = false;
+                document.getElementById('showSolutionBtn').disabled = true;
+                document.getElementById('giveHintBtn').disabled = true;
+            } else if (attempts === 7) {
+                document.getElementById('message').textContent = 'Vous avez raté le coche ! Le bon numéro était' + randomNumber + '.';
+                document.getElementById('result').textContent = 'Réponse : négative';
+                document.getElementById('playAgainBtn').disabled = false;
+                document.getElementById('showSolutionBtn').disabled = true;
+                document.getElementById('giveHintBtn').disabled = true;
+            } else if (guess < randomNumber) {
+                document.getElementById('message').textContent = 'Essayez un chiffre plus grand.';
+                document.getElementById('result').textContent = '';
+            } else {
+                document.getElementById('message').textContent = 'Essayez un chiffre plus petit.';
+                document.getElementById('result').textContent = '';
+            }
+
+            document.getElementById('attempts').textContent = attempts;
+        }
+
+        function playAgain() {
+            randomNumber = Math.floor(Math.random() * 50) + 1;
+            attempts = 0;
+            document.getElementById('guessInput').value = '';
+            document.getElementById('message').textContent = '';
+            document.getElementById('result').textContent = '';
+            document.getElementById('attempts').textContent = attempts;
+            document.getElementById('playAgainBtn').disabled = true;
+            document.getElementById('showSolutionBtn').disabled = false;
+            document.getElementById('giveHintBtn').disabled = false;
+        }
+
+        function showSolution() {
+            document.getElementById('message').textContent = 'La solution est ' + randomNumber + '.';
+        }
+
+        function giveHint() {
+            var hint = randomNumber % 2 === 0 ? 'pair' : 'impair';
+            document.getElementById('message').textContent = 'Le numéro est ' + hint + '.';
+        }
+
+        document.getElementById('playAgainBtn').addEventListener('click', playAgain);
+        document.getElementById('showSolutionBtn').addEventListener('click', showSolution);
+        document.getElementById('giveHintBtn').addEventListener('click', giveHint);
+        document.getElementById('guessInput').addEventListener('keyup', function (event) {
+            if (event.key === 'Entrer') {
+                checkGuess();
+            }
+        });
+    </script>
+</body>
+
+</html>
