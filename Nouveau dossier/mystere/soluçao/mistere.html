@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <script src="mistere.js" defer></script>
+    <title>Document</title>
+    <style>
+        input{
+            height: 30px;
+            width: 300px;
+        }
+        .ligne{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Trouvez le nombre mystere</h1>
+        <p>Vous avez 7 essaies maximum pour trouver le nombre</p>
+        <button id="newGame">Nouveau Jeu</button>
+        <button id="solution">Solution</button>
+        <button id="propose">Proposer</button>
+        <br> <br>
+        <form id="monForm">
+            <fieldset>
+                <div class="ligne">
+                    <label for="proposition">Proposition :</label>
+                    <input type="text" id="proposition">
+                </div>
+    
+                <div class="ligne">
+                    <label for="essai">N°essai</label>
+                    <input type="text" id="essai" value="0" disabled>
+                </div>
+    
+                <div class="ligne">
+                    <label for="message">Message:</label>
+                    <input type="text" id="message" disabled>
+                </div>
+    
+                <div class="ligne">
+                    <label for="reponse">Reponse:</label>
+                    <input type="text" id="reponse" disabled>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

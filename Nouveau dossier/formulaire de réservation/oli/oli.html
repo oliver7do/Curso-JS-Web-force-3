@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Réservation</title>
+    <link rel="stylesheet" type="text/css" href="oli.css">
+</head>
+
+<body>
+    <div class="color-animation"></div>
+    <h1 class="rouge">Formulaire de Réservation</h1>
+    <form id="reservationForm" action="#" method="post">
+        <div class="rouge">
+            <label for="firstName"><strong>Prénom :</strong></label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="rouge">
+            <label for="lastName"><strong>Nom :</strong></label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="rouge">
+            <label for="email"><strong>Email :</strong></label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="rouge">
+            <label for="phone"><strong>Téléphone :</strong></label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="rouge">
+            <label for="platType"><strong>Type de plat :</strong></label>
+            <select id="platType" name="platType">
+                <option value="">Choisir un Plat</option>
+                <option value="thiebouDieune">Thiebou Dieune - 15 €</option>
+                <option value="saladeQuinoa">Salade de quinoa - 12 €</option>
+                <option value="sushiBurger">Sushi Burger - 11 €</option>
+                <option value="filetsPoulet">Filets de poulet panés - 9 €</option>
+            </select>
+        </div>
+        <div class="rouge">
+            <label for="dessertType"><strong>Type de dessert :</strong></label>
+            <select id="dessertType" name="dessertType">
+                <option value="">Choisir un Désert</option>
+                <option value="churrosMaison">Churros maison - 15 €</option>
+                <option value="biscuitsPepites">Biscuits aux pépites - 12 €</option>
+                <option value="bucheNoel">Bûche de Noël - 11 €</option>
+                <option value="gateauFromage">Gâteau au fromage - 9 €</option>
+            </select>
+        </div>
+        <div class="rouge">
+            <label for="totalHT"><strong>Total HT :</strong></label>
+            <input type="text" id="totalHT" name="totalHT" readonly>
+        </div>
+        <div class="rouge">
+            <label for="totalTTC"><strong>Total TTC :</strong></label>
+            <input type="text" id="totalTTC" name="totalTTC" readonly>
+        </div>
+        <div class="rouge">
+            <input type="checkbox" id="conditions" name="conditions">
+            <label for="conditions"><strong>J'accepte les conditions générales</strong></label>
+        </div>
+        <div class="rouge">
+            <button type="button" id="confirmBtn"><strong>Confirmer</strong></button>
+        </div>
+        <div class="rouge">
+            <button type="submit" id="submitBtn" disabled><strong>Valider la commande</strong</button>
+        </div>
+    </form>
+
+    <div id="message"></div>
+
+    <script src="oli.js"></script>
+</body>
+
+</html>

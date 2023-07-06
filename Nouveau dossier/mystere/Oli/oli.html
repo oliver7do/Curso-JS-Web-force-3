@@ -42,44 +42,34 @@
     <button id="giveHintBtn">Proposer</button>
 </div>
     <script>
-        var randomNumber = Math.floor(Math.random() * 50) + 1;
+        var randomNumber = Math.floor(Math.random() * 51);
         var attempts = 0;
 
         function checkGuess() {
             var guess = parseInt(document.getElementById('guessInput').value);
+            if (attempts < 7){
+                attempts++;
 
-            if (isNaN(guess) || guess < 0 || guess > 50) {
-                document.getElementById('message').textContent = 'Entrez un nombre valide entre 1 et 50.';
-                return;
+                   document.getElementById('attempts').textContent = attempts;
+                if (guess === randomNumber) {
+                    document.getElementById('message').textContent = 'Félicitations ! Vous avez deviné le chiffre.';
+                    document.getElementById('result').textContent = 'Réponse : positive';
+                    document.getElementById('playAgainBtn').disabled = false;
+                    document.getElementById('showSolutionBtn').disabled = true;
+                    document.getElementById('giveHintBtn').disabled = true;
+                } else if (guess < randomNumber) {
+                    document.getElementById('message').textContent = 'Essayez un chiffre plus grand.';
+                    document.getElementById('result').textContent = '';
+                } else {
+                    document.getElementById('message').textContent = 'Essayez un chiffre plus petit.';
+                    document.getElementById('result').textContent = '';
+                }
+
             }
-
-            attempts++;
-
-            if (guess === randomNumber) {
-                document.getElementById('message').textContent = 'Félicitations ! Vous avez deviné le chiffre.';
-                document.getElementById('result').textContent = 'Réponse : positive';
-                document.getElementById('playAgainBtn').disabled = false;
-                document.getElementById('showSolutionBtn').disabled = true;
-                document.getElementById('giveHintBtn').disabled = true;
-            } else if (attempts === 7) {
-                document.getElementById('message').textContent = 'Vous avez raté le coche ! Le bon numéro était' + randomNumber + '.';
-                document.getElementById('result').textContent = 'Réponse : négative';
-                document.getElementById('playAgainBtn').disabled = false;
-                document.getElementById('showSolutionBtn').disabled = true;
-                document.getElementById('giveHintBtn').disabled = true;
-            } else if (guess < randomNumber) {
-                document.getElementById('message').textContent = 'Essayez un chiffre plus grand.';
-                document.getElementById('result').textContent = '';
-            } else {
-                document.getElementById('message').textContent = 'Essayez un chiffre plus petit.';
-                document.getElementById('result').textContent = '';
-            }
-
-            document.getElementById('attempts').textContent = attempts;
         }
 
         function playAgain() {
-            randomNumber = Math.floor(Math.random() * 50) + 1;
+            randomNumber = Math.floor(Math.random() * 51);
             attempts = 0;
             document.getElementById('guessInput').value = '';
             document.getElementById('message').textContent = '';
@@ -101,7 +91,7 @@
 
         document.getElementById('playAgainBtn').addEventListener('click', playAgain);
         document.getElementById('showSolutionBtn').addEventListener('click', showSolution);
-        document.getElementById('giveHintBtn').addEventListener('click', giveHint);
+        document.getElementById('giveHintBtn').addEventListener('click', checkGuess);
         document.getElementById('guessInput').addEventListener('keyup', function (event) {
             if (event.key === 'Entrer') {
                 checkGuess();

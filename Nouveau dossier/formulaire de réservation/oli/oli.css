@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    animation: colorChange 5s infinite;
+}
+.color-animation {
+    width: 100px;
+    height: 100px;
+    animation: colorChange 5s infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: red;
+    }
+
+    25% {
+        background-color: blue;
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    75% {
+        background-color: yellow;
+    }
+
+    100% {
+        background-color: orange;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 5px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+}
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style du bouton de confirmation */
+#confirmBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Style du bouton de validation de commande */
+#submitBtn {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rouge{
+    color: white;
+    
+}
