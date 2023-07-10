@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <script src="./js/form_reservation.js" defer></script>
+    <link rel="stylesheet" href="./css/form_reservation.css">
+    <title>Formulaire de reservation</title>
+</head>
+<body>
+<div class="raindrop">
+
+</div>
+    <div class="container">
+        <h1>Formulaire de réservation</h1>
+        <form action="">
+            <input type="text" placeholder=" nom" id="nom" required><br>
+            <input type="email" placeholder=" email" id="email" name="email" required><br>
+            <input type="tel"  placeholder=" téléphone" id="tel" name="tel" required><br>
+            <div class="choix">
+                <select name="" id="plat">
+                    <option value="">Choisir un plat</option>
+                    <option value="Thiebou">Thiebou dieune <span>15€</span></option>
+                    <option value="Salade">Salade de quinoa <span>12€</span></option>
+                    <option value="Sushi">Sushi burger <span>11€</span></option>
+                    <option value="Filets">Filets de poulet pané <span>9€</span></option>
+                </select>
+                <select name="" id="dessert">
+                    <option value="">Choisir un dessert</option>
+                    <option value="Churros">Churros maison <span>15€</span></option>
+                    <option value="Biscuits">Biscuits au pepites <span>12€</span></option>
+                    <option value="Buche">Buche de noel <span>11€</span></option>
+                    <option value="Gateau">Gâteau au fromage <span>9€</span></option>
+                </select>
+            </div>
+            <div class="total">
+                <input type="text" placeholder=" Total HT" id="ht">
+                <input type="text" placeholder=" Total TTC" id="ttc">
+            </div>
+            <div class="conditionGeneral">
+                <input type="checkbox" name="condition" id="condition">
+                <p>J'accepte les conditions générales</p>
+            </div>
+            <div class="bouton">
+                <button id="valider">Valider ma commande</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

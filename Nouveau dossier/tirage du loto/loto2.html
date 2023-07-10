@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/loto2.css">
+</head>
+
+<body>
+    <h1>Sorteio da Loteria</h1>
+    <table id="input-table">
+        <tr>
+            <th>Insira os números:</th>
+            <td><input type="number" id="num1"></td>
+            <td><input type="number" id="num2"></td>
+            <td><input type="number" id="num3"></td>
+            <td><input type="number" id="num4"></td>
+            <td><input type="number" id="num5"></td>
+        </tr>
+    </table>
+    <button onclick="verificarSorteio()">Verificar Resultado</button>
+    <table id="resultado">
+        <tr>
+            <th>Números Sorteados:</th>
+            <td id="sorteados"></td>
+        </tr>
+    </table>
+    <script src="./js/loto2.js"></script>
+</body>
+
+</html>

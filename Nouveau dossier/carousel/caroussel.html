@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgb(131, 128, 218);
+        }
+        .container{
+            margin: auto;
+            height: 288px;
+            width: 512px;
+            background-image: url("./imgs/image1.jpg");
+        }
+
+        .next{
+            font-size: xx-large;
+            position: absolute;
+            top: 150px;
+            right: 600px;
+            cursor: pointer;
+        }
+
+        .prev{
+            font-size: xx-large;
+            position: absolute;
+            top: 150px;
+            left: 600px;
+            cursor: pointer;
+        }
+    .raindrop {
+    position: fixed;
+    top: -50px;
+    width: 1px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    animation-name: fall;
+    animation-timing-function: linear;
+        }
+
+    @keyframes fall {
+    0% {
+        top: -50px;
+    }
+
+    100% {
+        top: 100vh;
+    }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="raindrop">
+    
+    </div>
+
+    <div class="container">
+        <!-- ici backgound -->
+    </div>
+    <div class="prev">&lt;</div>
+    <div class="next">&gt;</div>
+    <script>
+        let curentIndex = 0;
+
+        let images = [
+            "imgs/image1.jpg",
+            "imgs/image2.jpg",
+            "imgs/image3.jpg",
+            "imgs/image4.jpg",
+        ];
+
+        $(".prev").click(() => {
+            curentIndex--;
+            if(curentIndex < 0){
+                curentIndex = images.length - 1;
+            }
+            $(".container").css({
+                backgroundImage: "url("+images[curentIndex]+")"
+            });
+        });
+
+        $(".next").click(() => {
+            curentIndex++;
+            if(curentIndex == images.length){
+                curentIndex = 0;
+            }
+            $(".container").css({
+                backgroundImage: "url("+images[curentIndex]+")"
+            });
+        });
+
+        // Chuva
+        function createRaindrop() {
+                const raindrop = document.createElement('div');
+                raindrop.className = 'raindrop';
+                raindrop.style.left = `${Math.random() * 100}%`;
+                raindrop.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                document.body.appendChild(raindrop);
+            }
+
+            // Cria várias gotas de chuva em intervalos regulares
+            function createRain() {
+                setInterval(createRaindrop, 200);
+            }
+
+            // Inicia a animação da chuva
+            createRain();
+
+    </script>
+</body>
+
+</html>

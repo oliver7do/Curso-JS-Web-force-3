@@ -1,0 +1,46 @@
+body{
+    background-color: azure;
+}
+/* chuva */
+.raindrop {
+    position: fixed;
+    top: -50px;
+    width: 1px;
+    height: 20px;
+    background-color: rgb(228, 34, 34);
+    animation-name: fall;
+    animation-timing-function: linear;
+}
+
+@keyframes fall {
+    0% {
+        top: -50px;
+    }
+
+    100% {
+        top: 100vh;
+    }
+}
+/* final da chuva */
+.tablee{
+    width: 400px;
+    margin: auto;
+}
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 2px solid black;
+    padding: 20px;
+   
+}
+
+button {
+    margin-bottom: 10px;
+    color: blue;
+    background-color: yellow;
+    padding: 7px;
+}

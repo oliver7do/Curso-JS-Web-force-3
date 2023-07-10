@@ -1,0 +1,148 @@
+
+/* .animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#rotating-word {
+    font-size: 48px;
+    font-weight: bold;
+} */
+/* .animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#rotating-word {
+    font-size: 48px;
+    font-weight: bold;
+} */
+
+/* Segunda animaçao */
+
+/* .animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cube {
+    width: 100px;
+    height: 100px;
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+.cube::before,
+.cube::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.cube::before {
+    transform: translateZ(-50px);
+    background-color: #ff0000;
+}
+
+.cube::after {
+    transform: rotateY(90deg) translateZ(-50px);
+    background-color: #00ff00;
+} */
+
+/* Terceira animaçao */
+body{
+    background-color: gray;
+}
+.animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cube {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+.cube:nth-child(1) {
+    background-color: #ff0000;
+}
+
+.cube:nth-child(2) {
+    background-color: #00ff00;
+}
+
+.cube:nth-child(3) {
+    background-color: #0000ff;
+}
+
+.cube:nth-child(4) {
+    background-color: #ff00ff;
+}
+
+/* efeito de chuva */
+.raindrop {
+    position: fixed;
+    top: -20px;
+    width: 2px;
+    height: 20px;
+    background-color: #00f;
+    animation-name: fall;
+    animation-timing-function: linear;
+}
+
+@keyframes fall {
+    0% {
+        top: -20px;
+    }
+
+    100% {
+        top: 100vh;
+    }
+}
+
+/* segundo exemplo de chuva */
+.raindrop {
+    position: absolute;
+    width: 2px;
+    height: 60px;
+    background-color: white;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}

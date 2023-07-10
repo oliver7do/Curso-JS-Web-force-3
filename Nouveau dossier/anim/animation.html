@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <!-- <script src="index.js"></script> -->
+    <title>Document</title>
+    <style>
+        #monElement{
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+    <div id="monElement">Bonjour</div>
+    <script>
+        $(document).ready(() => { // attend le chargement avant d'executer le code a l'interieur
+            // $('#monElement').show(5000); // pour afficher avec anim
+            // $("#monElement").hide(5000); // pour cacher avec anim
+
+            // $("#monElement").fadeIn(5000); // pour afficher avec un effet fondu
+            // $("#monElement").fadeOut(5000); // pour cacher avec un effet fondu
+
+            // $("#monElement").slideUp(5000); // pour cacher un element visible animation de bas en haut
+            // $("#monElement").slideDown(5000); // pour afficher un element visible animation de haut en bas (element en display: none)
+
+            setInterval(() => { // execute un code a intervale regulier de temps
+
+                $("#monElement").animate({
+                    opacity: 0.5,
+                    fontSize: "2em",
+                    rotate: "-180deg",
+                }, 5000);
+
+                $("#monElement").animate({
+                    opacity: 1,
+                    fontSize: "1em",
+                    rotate: "0deg",
+                }, 5000);
+
+            }, 5000); // toutes les 5 secondes
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #banner{
+            width: 50%;
+            height: 350px;
+            background-image: url("./imgs/image1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: 22%;
+        }
+        .raindrop {
+    position: fixed;
+    top: -50px;
+    width: 1px;
+    height: 20px;
+    background-color: white;
+    animation-name: fall;
+    animation-timing-function: linear;
+}
+
+@keyframes fall {
+    0% {
+        top: -50px;
+    }
+
+    100% {
+        top: 100vh;
+    }
+}
+    </style>
+</head>
+<body>
+    <header id="banner">
+        
+    </header>
+    <div class="raindrop">
+    
+    </div>
+
+    <script>
+        let images = [
+            // "panda1.jpg",
+            // "panda2.png",
+
+            "imgs/image1.jpg",
+            "imgs/image2.jpg",
+            "imgs/image3.jpg",
+            "imgs/image4.jpg",
+            "imgs/image5.jpg",
+        ];
+
+        let curentIndex = 0;
+
+        // // JS
+        // setInterval(() => {
+        //     // document.getElementById("banner").style.backgroundImage = "url(imgs/panda1.jpg)";
+        //     curentIndex++;
+        //     if(curentIndex == images.length){
+        //         curentIndex = 0;
+        //     }
+        //     // document.getElementById("banner").style.backgroundImage = "url(imgs/"+images[curentIndex]+")";
+
+        //     document.getElementById("banner").style.backgroundImage = "url("+images[curentIndex]+")";
+            
+        // }, 5000);
+
+
+        // jquery
+        setInterval(() => {
+            curentIndex++;
+            if(curentIndex == images.length){
+                curentIndex = 0;
+            }
+            $("#banner").css({
+                backgroundImage: "url("+images[curentIndex]+")"
+            });
+        },5000);
+
+        // Chuva
+    function createRaindrop() {
+        const raindrop = document.createElement('div');
+        raindrop.className = 'raindrop';
+        raindrop.style.left = `${Math.random() * 100}%`;
+        raindrop.style.animationDuration = `${Math.random() * 2 + 1}s`;
+        document.body.appendChild(raindrop);
+    }
+
+    // Cria várias gotas de chuva em intervalos regulares
+    function createRain() {
+        setInterval(createRaindrop, 100);
+    }
+
+    // Inicia a animação da chuva
+    createRain();
+
+    </script>
+</body>
+</html>

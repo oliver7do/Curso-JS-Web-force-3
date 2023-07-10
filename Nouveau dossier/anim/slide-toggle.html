@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #toggleButton{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #myDiv{
+            position: absolute;
+            margin: 20px 0;
+            top: 50px;
+        }
+        ul{
+            margin-top: 30px;
+            background-color: wheat;
+            padding: 0;
+        }
+
+        p{
+            position: absolute; 
+            top: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="myDiv" style="display: none;">
+      <ul>
+        <li>lien 1</li>
+        <li>lien 2</li>
+        <li>lien 3</li>
+      </ul>
+    </div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla esse corrupti id quia ratione nostrum harum. Repellendus, doloremque at? Blanditiis ratione similique quod magnam tempore! Fugit sequi dolorem enim harum.</p>
+    <button id="toggleButton">Basculer</button>
+    <script>
+      $("#toggleButton").click(function () {
+        $(".myDiv").slideToggle();
+      });
+    </script>
+  </body>
+</html>
