@@ -8,9 +8,78 @@
     <link rel="stylesheet" href="exercice.css">
 
 </head>
+<style>
+    .barra-busca {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f2f2f2;
+        padding: 10px;
+    }
 
-<body>
+    .barra-busca input[type="text"],
+    .barra-busca input[type="date"] {
+        margin-right: 10px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .barra-busca button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+
+<!-- <div class="formulario">
     <form>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
+
+        <label for="data-entrada">Data de Entrada:</label>
+        <input type="date" id="data-entrada" name="data-entrada" placeholder="Data de Entrada" required>
+
+        <label for="data-saida">Data de Saída:</label>
+        <input type="date" id="data-saida" name="data-saida" placeholder="Data de Saída" required>
+
+        <button type="submit">Procurar Disponibilidade</button>
+    </form>
+</div> -->
+<body>
+<div class="barra-busca">
+    <input type="text" id="endereco" placeholder="Endereço">
+    <input type="date" id="data-entrada" placeholder="Data de Entrada">
+    <input type="date" id="data-saida" placeholder="Data de Saída">
+    <button onclick="realizarBusca()">Buscar</button>
+</div>
+
+<script>
+    function realizarBusca() {
+        var endereco = document.getElementById("endereco").value;
+        var dataEntrada = document.getElementById("data-entrada").value;
+        var dataSaida = document.getElementById("data-saida").value;
+
+        // Realize a ação desejada com os dados inseridos
+        console.log("Endereço: " + endereco);
+        console.log("Data de Entrada: " + dataEntrada);
+        console.log("Data de Saída: " + dataSaida);
+    }
+</script>
+
+    <!-- <div class="dropdown">
+        <button class="dropbtn">Abrir Lista</button>
+        <div class="dropdown-content">
+            <a href="#">Opção 1</a>
+            <a href="#">Opção 2</a>
+            <a href="#">Opção 3</a>
+             Adicione quantas opções você desejar -->
+        <!-- </div>
+    </div> --> 
+    <!-- <form>
     <label for="nome">Nom:</label>
     <input class="nom" type="text" id="todo" placeholder="entrez une todo" />
     <button id="add_todo" class="button">valider</button>
@@ -21,7 +90,7 @@
     <div id="todolist">
         </div>
     </div>
-    <script src="exercise.js"></script>
+    <script src="exercise.js"></script> -->
 </body>
 
 </html>
